@@ -9,6 +9,8 @@ const addNote = ({ title, body }) => {
   } else {
     notes.push({ title, body });
 
+    debugger;
+
     saveNotes(notes);
     console.log(chalk.bgGreen.yellowBright("This note was successfull added!"));
   }

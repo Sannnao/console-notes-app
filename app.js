@@ -1,19 +1,7 @@
 const yargs = require('yargs');
 const { addNote, removeNote, listNotes, readNote } = require('./notes.js');
-const { commandCreator, builderItemCreator } = require('./utils');
-
-const addBuilder = {
-  title: builderItemCreator('Title Content', true, 'string'),
-  body: builderItemCreator('Body content', true, 'string'),
-};
-
-const removeBuilder = {
-  title: builderItemCreator('Title Content', true, 'string'),
-};
-
-const readNoteBuilder = {
-  title: builderItemCreator('Title Content', true, 'string'),
-};
+const { commandCreator } = require('./utils');
+const { addBuilder, removeBuilder, readNoteBuilder } = require('./builders');
 
 commandCreator('add', 'Add a new note', addNote, addBuilder);
 commandCreator('remove', 'Removes a new note', removeNote, removeBuilder);
